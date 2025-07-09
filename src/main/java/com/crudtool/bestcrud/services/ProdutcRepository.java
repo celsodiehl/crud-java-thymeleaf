@@ -1,4 +1,7 @@
 package com.crudtool.bestcrud.services;
 
-public interface ProdutcRepository {
+import com.crudtool.bestcrud.models.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProdutcRepository extends JpaRepository<Product, Integer> {
 }
