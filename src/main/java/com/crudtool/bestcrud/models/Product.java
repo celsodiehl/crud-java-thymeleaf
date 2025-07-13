@@ -19,7 +19,7 @@ public class Product {
     private String name;
     private String brand;
     private String category;
-    private String price;
+    private double price;
 
     @Column(columnDefinition = "TEXT")
     private String description;

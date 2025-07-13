@@ -20,6 +20,7 @@ public class ClientController {
     @Autowired
     private ClientRepository repo;
 
+    //READ
     @GetMapping
     public String getClients(Model model){
         List<Client> clients = repo.findAll();

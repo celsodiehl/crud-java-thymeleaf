@@ -35,8 +35,8 @@
           <td th:text="${obj.category}"></td>
           <td th:text="@{${obj.price} + '$'}"></td>
           <td th:text="${obj.description}"></td>
-          <td th:text="${obj.createdAt.toString().substring(0, 10)}"></td>
-          <td><img th:src="@{'http://localhost:8080/images/' + ${obj.imageFileName} + '.jpg'}" alt="..." width="100"></td>
+          <td th:text="${#dates.format(obj.createdAt, 'dd/MM/yyyy')}"></td>
+          <td><img th:src="@{'/images/' + ${obj.imageFileName}}" alt="..." width="70" height="80"></td>
 
 
           <td style="white-space:nowrap">
