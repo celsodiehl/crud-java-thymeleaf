@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="<http://www.thymeleaf.org>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
                 <div class="row mb-3">
                     <label class="cool-sm-4 col-form-label">Name</label>
                     <div class="col-sm-8">
-                        <input class="form-control" field="${productDto.name}">
+                        <input class="form-control" type="text" th:field="${productDto.name}" />
                         <p if="${#fields.hasErrors('name')}" errorclass="text-danger" errors="${productDto.name}"></p>
                     </div>
                 </div>

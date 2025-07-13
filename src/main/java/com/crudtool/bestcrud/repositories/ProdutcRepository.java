@@ -1,4 +1,4 @@
-package com.crudtool.bestcrud.services;
+package com.crudtool.bestcrud.repositories;
 
 import com.crudtool.bestcrud.models.Product;
 import org.springframework.data.jpa.repository.JpaRepository;

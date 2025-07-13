@@ -1,8 +1,9 @@
 package com.crudtool.bestcrud.controllers;
 
+import com.crudtool.bestcrud.models.Client;
 import com.crudtool.bestcrud.models.Product;
 import com.crudtool.bestcrud.models.ProductDTO;
-import com.crudtool.bestcrud.services.ProdutcRepository;
+import com.crudtool.bestcrud.repositories.ProdutcRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -18,15 +19,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("products")
+@RequestMapping("/products")
 public class ProductController {
 
     @Autowired
     private ProdutcRepository repo;
 
-    @GetMapping({"", "/"})
+    @GetMapping
     public String showProductList(Model model){
-        List<Product> products = repo.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        List<Product> products = repo.findAll();
         model.addAttribute("products", products);
         return "products/index";
     }

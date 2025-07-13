@@ -8,42 +8,37 @@
 <nav th:replace="~{layout :: page_navbar}"></nav>
 
 <div class="container py-3">
-  <h1 class="text-center my-4">Lista de Produtos</h1>
+  <h1 class="text-center my-4">Lista de Clientes YOU TUBE</h1>
 
-  <a class="btn btn-primary mb-3" href="/products/create">Adicionar Produto</a>
+  <a class="btn btn-primary mb-3" href="/clients/create">Adicionar Cliente</a>
 
   <table class="table">
     <thead>
      <tr>
        <th>ID</th>
        <th>Nome</th>
-       <th>Marca</th>
-       <th>Category</th>
-       <th>Preço</th>
-       <th>Descrição</th>
-       <th>Criado em:</th>
-       <th>IMAGEM</th>
+       <th>E-mail</th>
+       <th>Phone</th>
+       <th>Address</th>
+       <th>Created At</th>
        <th>Ação</th>
      </tr>
     </thead>
 
     <tbody class="table-group-divider">
-        <tr th:each="obj : ${products}">
-          <td th:text="${obj.id}"></td>
-          <td th:text="${obj.name}"></td>
-          <td th:text="${obj.brand}"></td>
-          <td th:text="${obj.category}"></td>
-          <td th:text="@{${obj.price} + '$'}"></td>
-          <td th:text="${obj.description}"></td>
-          <td th:text="${obj.createdAt.toString().substring(0, 10)}"></td>
-          <td><img th:src="@{'http://localhost:8080/images/' + ${obj.imageFileName} + '.jpg'}" alt="..." width="100"></td>
-
+        <tr data-th-each="client : ${clients}">
+          <td data-th-text="${client.id}"></td>
+          <td th:text="${client.firstname"></td>
+          <td th:text="${client.email}"></td>
+          <td th:text="${client.phone}"></td>
+          <td th:text="${client.address}"></td>
+          <td th:text="${client.createdAt.substring(0, 10)}"></td>
 
           <td style="white-space:nowrap">
             <a class="btn btn-primary btn-sm"
-              th:href="@{/products/edit(id=${obj.id})}">Editar</a>
+              th:href="@{/clients/edit(id=${client.id})}">Editar</a>
             <a class="btn btn-danger btn-sm"
-              th:href="@{/products/delete(id=${obj.id})}"
+              th:href="@{/clients/delete(id=${client.id})}"
               onclick="return confirm('Certeza?')">DELETE</a>
 
           </td>
