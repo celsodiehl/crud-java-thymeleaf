@@ -22,10 +22,7 @@ public class HomeController {
         return "privacy";
     }
 
-    @GetMapping({"/product"})
-    public String product(){
-        return "product";
-    }
+//TIREI DO PRODUCTS
 
 
 }

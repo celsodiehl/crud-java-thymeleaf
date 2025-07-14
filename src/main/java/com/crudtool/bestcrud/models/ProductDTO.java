@@ -15,6 +15,7 @@ import java.util.Date;
 public class ProductDTO {
 
     @NotNull(message = "Um Nome é requerido")
+    @NotEmpty(message = "Um Nome é requerido")
     private String name;
 
     @NotEmpty(message = "Uma Marca é requerido")
