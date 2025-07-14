@@ -1,6 +1,7 @@
 package com.crudtool.bestcrud.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotNull(message = "O nome do produto é obrigatório")
     private String name;
     private String brand;
     private String category;

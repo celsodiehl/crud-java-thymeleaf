@@ -38,14 +38,9 @@
           <td th:text="${#dates.format(obj.createdAt, 'dd/MM/yyyy')}"></td>
           <td><img th:src="@{'/images/' + ${obj.imageFileName}}" alt="..." width="70" height="80"></td>
 
-
           <td style="white-space:nowrap">
-            <a class="btn btn-primary btn-sm"
-              th:href="@{/products/edit(id=${obj.id})}">Editar</a>
-            <a class="btn btn-danger btn-sm"
-              th:href="@{/products/delete(id=${obj.id})}"
-              onclick="return confirm('Certeza?')">DELETE</a>
-
+            <a class="btn btn-primary btn-sm" th:href="@{/products/edit(id=${obj.id})}">Editar</a>
+            <a class="btn btn-danger btn-sm" th:href="@{/products/delete(id=${obj.id})}" onclick="return confirm('Certeza, quer Excluir?')">DELETE</a>
           </td>
         </tr>
     </tbody>
