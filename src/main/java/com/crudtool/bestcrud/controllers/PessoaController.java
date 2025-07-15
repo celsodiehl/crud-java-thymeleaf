@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -52,6 +53,19 @@ public class PessoaController {
         Iterable<Pessoa> it = pessoaRepository.findAll();
                                      //pessoas é o objeto que vai para o HTML
         andView.addObject("pessoas", it);
+        return andView;
+    }
+
+    //DELETE
+    @GetMapping("/delete/{id}")
+    public ModelAndView delete(@PathVariable("id")Long id) {
+
+        pessoaRepository.deleteById(id);
+
+        ModelAndView andView = new ModelAndView("redirect:/pessoas");
+        andView.addObject("pessoas", pessoaRepository.findAll());
+        //RETORNAR OBJ VAZIO
+        andView.addObject("obj", new Pessoa());
         return andView;
     }
 
