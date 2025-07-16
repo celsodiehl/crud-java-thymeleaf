@@ -31,8 +31,8 @@
           <td th:text="${obj.idade}"></td>
 
           <td style="white-space:nowrap">
-            <a class="btn btn-primary btn-sm" th:href="@{/pessoas/edit(id=${obj.id})}">Editar</a>
-            <a class="btn btn-danger btn-sm" th:href="@{/pessoas/delete(id=${obj.id})}" onclick="return confirm('Certeza, quer Excluir?')">DELETE</a>
+            <a class="btn btn-primary btn-sm" th:href="@{/pessoas/edit/{id}(id=${obj.id})}">Editar</a>
+            <a class="btn btn-danger btn-sm" th:href="@{/pessoas/delete/{id}(id=${obj.id})}" onclick="return confirm('Certeza, quer Excluir?')">DELETE</a>
           </td>
         </tr>
     </tbody>
