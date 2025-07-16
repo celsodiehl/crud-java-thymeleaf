@@ -57,4 +57,17 @@ public class ClientController {
         return "clients/edit";
     }
 
+    //UPDATE ATUALIZAR
+    @PostMapping("/update/{id}")
+    public String update(@PathVariable("id") long id, @Valid Client client,
+                         BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            client.setId(id);
+            return "clients/edit";
+        }
+
+        repo.save(client);
+        return "redirect:/clients";
+    }
+
 }
