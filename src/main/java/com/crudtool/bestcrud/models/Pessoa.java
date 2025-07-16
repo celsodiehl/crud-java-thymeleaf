@@ -7,10 +7,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Entity
 @Table(name = "pessoa")
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Pessoa {  //ELE IMPLEMETOU SERIALIZABLE

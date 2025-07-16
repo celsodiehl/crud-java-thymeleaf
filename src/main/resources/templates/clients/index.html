@@ -17,9 +17,12 @@
      <tr>
        <th>ID</th>
        <th>Nome</th>
+       <th>Sobrenome</th>
+       <th>CPF</th>
        <th>E-mail</th>
        <th>Phone</th>
        <th>Address</th>
+       <th>Data de Nascimento</th>
        <th>Created At</th>
        <th>Ação</th>
      </tr>
@@ -29,9 +32,12 @@
         <tr th:each="client : ${clients}">
           <td th:text="${client.id}"></td>
           <td th:text="${client.firstname}"></td>
+          <td th:text="${client.lastname}"></td>
+          <td th:text="${client.cpf}"></td>
           <td th:text="${client.email}"></td>
           <td th:text="${client.phone}"></td>
           <td th:text="${client.address}"></td>
+          <td th:text="${#dates.format(client.dataNascimento, 'dd/MM/yyyy')}"></td>
           <td th:text="${#dates.format(client.createdAt, 'dd/MM/yyyy')}"></td>
 
           <td style="white-space:nowrap">

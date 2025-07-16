@@ -33,7 +33,7 @@
           <td th:text="${obj.name}"></td>
           <td th:text="${obj.brand}"></td>
           <td th:text="${obj.category}"></td>
-          <td th:text="@{${obj.price} + '$'}"></td>
+          <td th:text="${#numbers.formatDecimal(obj.price, 1, 2)}">0.00</td>
           <td th:text="${obj.description}"></td>
           <td th:text="${#dates.format(obj.createdAt, 'dd/MM/yyyy')}"></td>
           <td><img th:src="@{'/images/' + ${obj.imageFileName}}" alt="..." width="70" height="80"></td>

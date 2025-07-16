@@ -7,6 +7,13 @@
 
 <nav th:replace="~{layout :: page_navbar}"></nav>
 
+<div th:if="${mensagemSucesso}">
+  <p th:text="${mensagemSucesso}"></p>
+</div>
+<div th:if="${mensagemErro}">
+  <p th:text="${mensagemErro}"></p>
+</div>
+
 <div class="container py-3">
   <h1 class="text-center my-4">Pessoas Cadastradas</h1>
 
