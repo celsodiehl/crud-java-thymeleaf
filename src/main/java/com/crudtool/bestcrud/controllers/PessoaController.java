@@ -35,21 +35,6 @@ public class PessoaController {
         andView.addObject("obj", new Pessoa());
     }*/
 
-     //CREATE
-    @PostMapping("/create")
-    public ModelAndView salvar(Pessoa pessoa){
-        pessoaRepository.save(pessoa);
-
-        ModelAndView andView = new ModelAndView("pessoas/index");
-        Iterable<Pessoa> it = pessoaRepository.findAll();
-
-                                     //pessoas é o objeto que vai para o HTML
-        andView.addObject("pessoas", it);
-        //RETORNAR OBJ VAZIO
-        andView.addObject("obj", new Pessoa());
-        return andView;
-    }
-
     //ENTRA NO CREATE
     @GetMapping("/create")
     public String showCreatePage(Model model){
@@ -58,14 +43,23 @@ public class PessoaController {
         return "pessoas/create";
     }
 
+     //CREATE
+     @PostMapping("/create")
+     public String create(@Valid Pessoa pessoa, BindingResult result, Model model) {
+         if (result.hasErrors()) {
+             return "pessoas/create";
+         }
+
+         pessoaRepository.save(pessoa);
+         return "redirect:/pessoas";
+     }
+
     //LISTAGEM
-    @GetMapping             //esse /pessoa é da pasta pessoa = templates/pessoa
-    public ModelAndView pessoas(){  //Ao Clicar volta pra tela de LISTAGEM = index
-        ModelAndView andView = new ModelAndView("pessoas/index");
-        Iterable<Pessoa> it = pessoaRepository.findAll();
-                                     //pessoas é o objeto que vai para o HTML
-        andView.addObject("pessoas", it);
-        return andView;
+    @GetMapping
+    public String showUserList(Model model) {
+                                      //pessoas é o objeto que vai para o HTML
+        model.addAttribute("pessoas", pessoaRepository.findAll());
+        return "pessoas/index";
     }
 
     //UPDATE CARREGAR
@@ -80,7 +74,7 @@ public class PessoaController {
 
     //UPDATE ATUALIZAR
     @PostMapping("/update/{id}")
-    public String updateUser(@PathVariable("id") long id, @Valid Pessoa pessoa,
+    public String update(@PathVariable("id") long id, @Valid Pessoa pessoa,
                              BindingResult result, Model model) {
         if (result.hasErrors()) {
             pessoa.setId(id);
@@ -93,14 +87,11 @@ public class PessoaController {
 
     //DELETE
     @GetMapping("/delete/{id}")
-    public ModelAndView delete(@PathVariable("id")Long id) {
-        pessoaRepository.deleteById(id);
-
-        ModelAndView andView = new ModelAndView("redirect:/pessoas");
-        andView.addObject("pessoas", pessoaRepository.findAll());
-        //RETORNAR OBJ VAZIO
-        andView.addObject("obj", new Pessoa());
-        return andView;
+    public String delete(@PathVariable("id") long id, Model model) {
+        Pessoa pessoa = pessoaRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Código Inválido:" + id));
+        pessoaRepository.delete(pessoa);
+        return "redirect:/pessoas";
     }
 
 }

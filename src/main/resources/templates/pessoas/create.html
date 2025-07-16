@@ -26,7 +26,7 @@
           <label class="col-sm-4 col-form-label">Sobrenome.:</label>
           <div class="col-sm-8">
             <input class="form-control" th:field="${pessoa.sobrenome}">
-            <p if="${#fields.hasErrors('sobrenome')}" errorclass="text-danger" errors="${pessoa.sobrenome}"></p>
+            <p if="${#fields.hasErrors('sobrenome')}" th:errorclass="text-danger" th:errors="${pessoa.sobrenome}"></p>
           </div>
         </div>
 
@@ -34,7 +34,7 @@
           <label class="col-sm-4 col-form-label">Idade.:</label>
           <div class="col-sm-8">
             <input class="form-control" th:field="${pessoa.idade}">
-            <p if="${#fields.hasErrors('pessoa')}" errorclass="text-danger" errors="${pessoa.idade}"></p>
+            <p if="${#fields.hasErrors('pessoa')}" th:errorclass="text-danger" th:errors="${pessoa.idade}"></p>
           </div>
         </div>
 
