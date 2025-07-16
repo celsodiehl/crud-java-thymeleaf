@@ -21,7 +21,7 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @NotBlank(message = "Nome é Obrigatório")
     private String firstname;
     @NotBlank(message = "Sobrenome é Obrigatório")
@@ -32,10 +32,11 @@ public class Client {
     private String phone;
     private String address;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "dataNascimento")
     private Date dataNascimento;
 
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "createdAt")
     private Date createdAt;
 

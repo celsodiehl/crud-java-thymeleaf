@@ -29,23 +29,20 @@
     </thead>
 
     <tbody class="table-group-divider">
-        <tr th:each="client : ${clients}">
-          <td th:text="${client.id}"></td>
-          <td th:text="${client.firstname}"></td>
-          <td th:text="${client.lastname}"></td>
-          <td th:text="${client.cpf}"></td>
-          <td th:text="${client.email}"></td>
-          <td th:text="${client.phone}"></td>
-          <td th:text="${client.address}"></td>
-          <td th:text="${#dates.format(client.dataNascimento, 'dd/MM/yyyy')}"></td>
-          <td th:text="${#dates.format(client.createdAt, 'dd/MM/yyyy')}"></td>
+        <tr th:each="obj : ${objs}">
+          <td th:text="${obj.id}"></td>
+          <td th:text="${obj.firstname}"></td>
+          <td th:text="${obj.lastname}"></td>
+          <td th:text="${obj.cpf}"></td>
+          <td th:text="${obj.email}"></td>
+          <td th:text="${obj.phone}"></td>
+          <td th:text="${obj.address}"></td>
+          <td th:text="${#dates.format(obj.dataNascimento, 'dd/MM/yyyy')}"></td>
+          <td th:text="${#dates.format(obj.createdAt, 'dd/MM/yyyy')}"></td>
 
           <td style="white-space:nowrap">
-            <a class="btn btn-primary btn-sm"
-              th:href="@{/clients/edit(id=${client.id})}">Editar</a>
-            <a class="btn btn-danger btn-sm"
-              th:href="@{/clients/delete(id=${client.id})}"
-              onclick="return confirm('Certeza?')">DELETE</a>
+            <a class="btn btn-primary btn-sm" th:href="@{/clients/edit/{id}(id=${obj.id})}">Editar</a>
+            <a class="btn btn-danger btn-sm" th:href="@{/clients/delete(id=${obj.id})}" onclick="return confirm('Certeza?')">DELETE</a>
 
           </td>
         </tr>

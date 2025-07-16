@@ -13,15 +13,15 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pessoa {  //ELE IMPLEMETOU SERIALIZABLE
+public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Nome é Obrigatório")
+    @NotBlank(message = "Nome é Obrigatório!")
     private String nome;
-    @NotBlank(message = "Sobrenome é Obrigatório")
+    @NotBlank(message = "Sobrenome é Obrigatório!")
     private  String sobrenome;
     private int idade;
 

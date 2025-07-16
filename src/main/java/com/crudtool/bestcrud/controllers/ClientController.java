@@ -1,6 +1,7 @@
 package com.crudtool.bestcrud.controllers;
 
 import com.crudtool.bestcrud.models.Client;
+import com.crudtool.bestcrud.models.Pessoa;
 import com.crudtool.bestcrud.repositories.ClientRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class ClientController {
     @GetMapping
     public String getClients(Model model){
         List<Client> clients = repo.findAll();
-        model.addAttribute("clients", clients);
+        model.addAttribute("objs", clients);
         return "clients/index";
     }
     //ENTRA NO CREATE
@@ -44,6 +45,16 @@ public class ClientController {
         client.setCreatedAt(createdAt);
         repo.save(client);
         return "redirect:/clients";
+    }
+
+    //UPDATE CARREGAR
+    @GetMapping("/edit/{id}")
+    public String showUpdateForm(@PathVariable("id") long id, Model model) {
+        Client client = repo.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Código de Cliente Inválido:" + id));
+
+        model.addAttribute("obj", client);
+        return "clients/edit";
     }
 
 }
