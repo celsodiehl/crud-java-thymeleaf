@@ -32,7 +32,7 @@ public class Client {
     private String phone;
     private String address;
 
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "dataNascimento")
     private Date dataNascimento;
 
