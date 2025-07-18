@@ -42,7 +42,7 @@
 
           <td style="white-space:nowrap">
             <a class="btn btn-primary btn-sm" th:href="@{/clients/edit/{id}(id=${obj.id})}">Editar</a>
-            <a class="btn btn-danger btn-sm" th:href="@{/clients/delete(id=${obj.id})}" onclick="return confirm('Certeza?')">DELETE</a>
+            <a class="btn btn-danger btn-sm" th:href="@{/clients/delete/{id}(id=${obj.id})}" onclick="return confirm('Certeza?')">DELETE</a>
 
           </td>
         </tr>

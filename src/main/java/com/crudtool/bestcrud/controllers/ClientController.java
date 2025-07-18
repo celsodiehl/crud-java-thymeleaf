@@ -70,4 +70,13 @@ public class ClientController {
         return "redirect:/clients";
     }
 
+    //DELETE
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") long id, Model model) {
+        Client client = repo.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Código Inválido:" + id));
+        repo.delete(client);
+        return "redirect:/clients";
+    }
+
 }
