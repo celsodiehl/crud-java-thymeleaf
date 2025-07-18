@@ -17,11 +17,6 @@ public class HomeController {
         return "contact";
     }
 
-    @GetMapping({"/privacy"})
-    public String privacy(){
-        return "privacy";
-    }
-
 //TIREI DO PRODUCTS
 
 
