@@ -1,7 +1,6 @@
 package com.crudtool.bestcrud.controllers;
 
 import com.crudtool.bestcrud.models.Client;
-import com.crudtool.bestcrud.models.Pessoa;
 import com.crudtool.bestcrud.repositories.ClientRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +21,15 @@ public class ClientController {
 
     //READ
     @GetMapping
-    public String getClients(Model model){
+    public String getClients(Model model) {
         List<Client> clients = repo.findAll();
         model.addAttribute("objs", clients);
         return "clients/index";
     }
+
     //ENTRA NO CREATE
     @GetMapping("/create")
-    public String showCreatePage(Model model){
+    public String showCreatePage(Model model) {
         Client client = new Client();
         model.addAttribute("client", client);
         return "clients/create";

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/pessoas")
@@ -26,27 +25,27 @@ public class PessoaController {
 
     //ENTRA NO CREATE
     @GetMapping("/create")
-    public String showCreatePage(Model model){
+    public String showCreatePage(Model model) {
         Pessoa pessoa = new Pessoa();
         model.addAttribute("pessoa", pessoa);
         return "pessoas/create";
     }
 
-     //CREATE
-     @PostMapping("/create")
-     public String create(@Valid Pessoa pessoa, BindingResult result, Model model) {
-         if (result.hasErrors()) {
-             return "pessoas/create";
-         }
-         pessoaRepository.save(pessoa);
-         model.addAttribute("mensagemSucesso", "Usuário cadastrado com sucesso!");
-         return "redirect:/pessoas";
-     }
+    //CREATE
+    @PostMapping("/create")
+    public String create(@Valid Pessoa pessoa, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            return "pessoas/create";
+        }
+        pessoaRepository.save(pessoa);
+        model.addAttribute("mensagemSucesso", "Usuário cadastrado com sucesso!");
+        return "redirect:/pessoas";
+    }
 
     //LISTAGEM
     @GetMapping
     public String showUserList(Model model) {
-                                      //pessoas é o objeto que vai para o HTML
+        //pessoas é o objeto que vai para o HTML
         model.addAttribute("pessoas", pessoaRepository.findAll());
         return "pessoas/index";
     }
@@ -64,7 +63,7 @@ public class PessoaController {
     //UPDATE ATUALIZAR
     @PostMapping("/update/{id}")
     public String update(@PathVariable("id") long id, @Valid Pessoa pessoa,
-                             BindingResult result, Model model) {
+                         BindingResult result, Model model) {
         if (result.hasErrors()) {
             pessoa.setId(id);
             return "pessoas/edit";
