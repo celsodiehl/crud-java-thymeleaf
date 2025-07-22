@@ -12,6 +12,11 @@
 
   <a class="btn btn-primary mb-3" href="/clients/create">Adicionar Cliente</a>
 
+  <form th:action="@{/clients/listar}" method="post">
+    <input type="text" name="filtro" placeholder="Buscar por nome" th:value="${filtro}" />
+    <button type="submit">Buscar</button>
+  </form>
+
   <table class="table">
     <thead>
      <tr>
@@ -21,8 +26,8 @@
        <th>CPF</th>
        <th>E-mail</th>
        <th>Phone</th>
-       <th>Address</th>
-       <th>Data de Nascimento</th>
+       <th>Endereço</th>
+       <th>Nascimento</th>
        <th>Created At</th>
        <th>Ação</th>
      </tr>
@@ -41,10 +46,16 @@
           <td th:text="${#dates.format(obj.createdAt, 'dd/MM/yyyy')}"></td>
 
           <td style="white-space:nowrap">
-            <a class="btn btn-primary btn-sm" th:href="@{/clients/edit/{id}(id=${obj.id})}">Editar</a>
-            <a class="btn btn-danger btn-sm" th:href="@{/clients/delete/{id}(id=${obj.id})}" onclick="return confirm('Certeza?')">DELETE</a>
+             <a class="btn btn-primary btn-sm" th:href="@{/clients/edit/{id}(id=${obj.id})}">Editar</a>
 
+            <a th:href="@{/clients/delete/{id}(id=${obj.id},firstname=${obj.firstname},lastname=${obj.lastname})}"
+               class="btn btn-danger btn-sm py-1 "
+               th:data-confirm-delete="|Tem Certeza de que quer Excluir o Cliente ${obj.firstname}?|"
+               onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"
+               >Excluir
+            </a>
           </td>
+
         </tr>
     </tbody>
 

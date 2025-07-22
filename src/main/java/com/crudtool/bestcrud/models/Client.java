@@ -2,14 +2,10 @@ package com.crudtool.bestcrud.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
-
 
 @Entity
 @Table(name = "clients")
@@ -39,6 +35,5 @@ public class Client {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Column(name = "createdAt")
     private Date createdAt;
-
 
 }

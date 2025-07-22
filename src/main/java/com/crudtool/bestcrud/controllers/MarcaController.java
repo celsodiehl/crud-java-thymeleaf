@@ -73,4 +73,13 @@ public class MarcaController {
         return "redirect:/marcas";
     }
 
+    //DELETE
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") long id, Model model) {
+        Marca obj = repo.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Código Inválido:" + id));
+        repo.delete(obj);
+        return "redirect:/marcas";
+    }
+
 }
