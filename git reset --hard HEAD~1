@@ -1,0 +1,125 @@
+[33mcommit 5f287d8c1a3c9cc1f037394299eb604eaea67916[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 23 16:20:52 2025 -0300
+
+    Criado Classe Telefone
+
+[33mcommit a8348a187b2148c599e3758656b414612dcf4416[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Tue Jul 22 08:18:32 2025 -0300
+
+    Criado filtro para busca por nome clients
+
+[33mcommit 2a78e05ca2f48d5e2c2fd3d45804cb17b438e692[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Fri Jul 18 10:46:32 2025 -0300
+
+    Criado Método Update/Read Marca
+
+[33mcommit ab3fe865b25b4d91f685e8a19d7b4bd616ee25cb[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Fri Jul 18 10:30:23 2025 -0300
+
+    Criado Método Create e Read Marca
+
+[33mcommit fcfc04649f26091dc0d992a6e1312ace1c878aae[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Fri Jul 18 09:54:19 2025 -0300
+
+    Corrigido Update Client DatePicker
+
+[33mcommit c2f2ab58667c341d6089c8282b4e7051584228ab[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Fri Jul 18 09:41:39 2025 -0300
+
+    Criado Método Delete Client
+
+[33mcommit 8af77ac6b7f4bf6d1a2916e4014841f04ffca025[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Fri Jul 18 09:35:52 2025 -0300
+
+    Corrigido erro em DatePicker Client
+
+[33mcommit b6400201ae576a7a156526e1a94fb45489eb3df5[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 16 18:53:47 2025 -0300
+
+    Implementado Método Update Cliente
+
+[33mcommit 3801f406fad9d60e0360c9170fed708eac546b3f[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 16 18:48:28 2025 -0300
+
+    Implementado Método Carregar Cliente
+
+[33mcommit 5e94e0be890672090780df3a18c1d44778d1dfb4[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 16 18:01:26 2025 -0300
+
+    Implementado Metodo Cadastrar Cliente
+
+[33mcommit b299d201b1ea546c2165a99dab851dd817324649[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 16 09:14:27 2025 -0300
+
+    Melhorado CRUD p/ Classe Pessoa
+
+[33mcommit 30a86459baa90c2eef66dfe8dd2e4006dd035ffa[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 16 08:46:42 2025 -0300
+
+    Criado Atualizar Pessoa
+
+[33mcommit 4eafe429d576b2b309494c80ac155a7e9a04d3ba[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Mon Jul 14 21:37:22 2025 -0300
+
+    Alterado Método Excluir
+
+[33mcommit 1173928454e3c79c05989b38d99631b839ccd764[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Mon Jul 14 20:58:22 2025 -0300
+
+    Criado Método Excluir Pessoa diferente
+
+[33mcommit 88822e04442f1b314e454b71053d8df312e83f3b[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Mon Jul 14 20:17:37 2025 -0300
+
+    Criado Model Pessoa e Cadastrado Pessoa
+
+[33mcommit ff512e8ba8b8fecab8813f90a8a38fc3d9273f1d[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Sun Jul 13 21:07:45 2025 -0300
+
+    Criado Pagina Update Produtos e Método
+
+[33mcommit 449d97588c659fb9d227a4d1d75b0148f559deee[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Sun Jul 13 13:11:17 2025 -0300
+
+    Cadastrado produtos com imagem
+
+[33mcommit 6ca7f57d2c32951a43a172391bb9e64cd16bf8c9[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Sat Jul 12 21:27:26 2025 -0300
+
+    Alterado BD e Listagem de Products e Clients
+
+[33mcommit df50eb2bdca7f2dfeed8433d8f363dba2a47dedd[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 9 19:13:18 2025 -0300
+
+    Cadastrando Produtos
+
+[33mcommit 8f2b61aed43b421598fdcc508a40775f29830fb4[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 9 16:35:13 2025 -0300
+
+    Produtos Listados
+
+[33mcommit 65f497e98f7ae238f05767918739be716258d3f4[m
+Author: Celso <celsodiehl@gmail.com>
+Date:   Wed Jul 9 15:45:07 2025 -0300
+
+    Criado Classe e bd Product
