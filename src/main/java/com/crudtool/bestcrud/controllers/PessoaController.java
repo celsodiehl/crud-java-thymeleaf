@@ -82,4 +82,14 @@ public class PessoaController {
         return "redirect:/pessoas";
     }
 
+    //TELEFONES
+    @GetMapping("/telefones/{id}")
+    public String telefones(@PathVariable("id") long id, Model model) {
+        Pessoa pessoa = pessoaRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Código de Pessoa Inválido:" + id));
+
+        model.addAttribute("pessoas", pessoa);
+        return "pessoas/telefones";
+    }
+
 }

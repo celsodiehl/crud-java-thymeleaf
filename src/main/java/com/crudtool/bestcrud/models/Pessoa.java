@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "pessoa")
 @Getter
@@ -24,5 +26,8 @@ public class Pessoa {
     @NotBlank(message = "Sobrenome é Obrigatório!")
     private  String sobrenome;
     private int idade;
+
+    @OneToMany(mappedBy = "pessoa")
+    private List<Telefone> telefones;
 
 }

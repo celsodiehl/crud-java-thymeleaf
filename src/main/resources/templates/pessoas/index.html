@@ -33,7 +33,7 @@
     <tbody class="table-group-divider">
         <tr th:each="obj : ${pessoas}">
           <td th:text="${obj.id}"></td>
-          <td th:text="${obj.nome}"></td>
+          <td><a th:href="@{/telefones/{id}(id=${obj.id})}"><span th:text="${obj.nome}"></span></a></td>
           <td th:text="${obj.sobrenome}"></td>
           <td th:text="${obj.idade}"></td>
 
